@@ -14,21 +14,21 @@ def my_printf(format_string,param):
             elif format_string[idx] == '#' and format_string[idx+1] == '.':
                 idy = idx+2
                 number = 0
-                while isnumeric(format_string[idy]):
+                while format_string[idy].isnumeric():
                     number = number * 10
                     number += int(format_string[idy])
                     idy = idy + 1
                 if format_string[idy] == 'k':   
-                    print(param[:number].swapcase())
+                    print(param[:number].swapcase(),end="")
                     shouldDo=False
                     printLength = True
             else:
                 print(format_string[idx].swapcase(),end="")
         else:
             if printLength:
-                if format_string[idx] == 'k'
-                printLength = False
-                shouldDo = True
+            	if format_string[idx] == 'k':
+                	printLength = False
+                	shouldDo = True
             else:
                 shouldDo=True
             
