@@ -18,10 +18,12 @@ def my_printf(format_string,param):
                     number = number * 10
                     number += int(format_string[idy])
                     idy = idy + 1
-                if format_string[idy] == 'k':   
+                if format_string[idy] == 'k':
                     print(param[:number].swapcase(),end="")
                     shouldDo=False
                     printLength = True
+                else:
+               	    print(format_string[idx].swapcase(),end="")
             else:
                 print(format_string[idx].swapcase(),end="")
         else:
