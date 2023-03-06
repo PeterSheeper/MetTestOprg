@@ -16,14 +16,20 @@ def my_printf(format_string,param):
                 number = 0
                 while isnumeric(format_string[idy]):
                     number = number * 10
-                    number += format_string[idy]
-                number = int(format_string[idx+2])
-                shouldDo=False
-                printLength = True
+                    number += int(format_string[idy])
+                    idy = idy + 1
+                if format_string[idy] == 'k':   
+                    print(param[:number].swapcase())
+                    shouldDo=False
+                    printLength = True
             else:
                 print(format_string[idx].swapcase(),end="")
         else:
-            if not printLength:
+            if printLength:
+                if format_string[idx] == 'k'
+                printLength = False
+                shouldDo = True
+            else:
                 shouldDo=True
             
     print("")
