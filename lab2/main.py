@@ -12,6 +12,11 @@ def my_printf(format_string,param):
                 print(param.swapcase(),end="")
                 shouldDo=False
             elif format_string[idx] == '#' and format_string[idx+1] == '.':
+                idy = idx+2
+                number = 0
+                while isnumeric(format_string[idy]):
+                    number = number * 10
+                    number += format_string[idy]
                 number = int(format_string[idx+2])
                 shouldDo=False
                 printLength = True
